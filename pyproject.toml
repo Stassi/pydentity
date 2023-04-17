@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pydentity"
+version = "0.0.1"
+description = "Identity functions."
+authors = ["Andreas Stassivik <andreas@stassi.net>"]
+license = "MPL-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.test.dependencies]
+behave = "^1.2.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
