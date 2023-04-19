@@ -1,0 +1,42 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '36 14 * * 5'
+
+env:
+  CODEQL_ACTION_VERSION: v2.2.12
+  LANGUAGE: python
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.5.2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@${{ env.CODEQL_ACTION_VERSION }}
+        with:
+          languages: ${{ env.LANGUAGE }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@${{ env.CODEQL_ACTION_VERSION }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@${{ env.CODEQL_ACTION_VERSION }}
+        with:
+          category: /language:${{ env.LANGUAGE }}
