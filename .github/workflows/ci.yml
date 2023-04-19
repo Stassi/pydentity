@@ -36,10 +36,6 @@ jobs:
         run: |
           poetry install
 
-      - name: Change to project root directory
-        run: |
-          cd ${{ github.workspace }}
-
       - name: Run Behave tests
         run: |
           poetry run behave
