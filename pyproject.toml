@@ -6,6 +6,8 @@ authors = ["Andreas Stassivik <andreas@stassi.net>"]
 license = "MPL-2.0"
 readme = "README.md"
 
+# Supported Operating Systems: ["macOS Monterey 12", "Ubuntu 22.04", "Windows Server 2022"]
+
 [tool.poetry.dependencies]
 python = "^3.7 || ^3.8 || ^3.9 || ^3.10 || ^3.11"
 
