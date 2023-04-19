@@ -1,13 +1,15 @@
 [tool.poetry]
 name = "pydentity"
-version = "0.0.1"
+version = "0.0.2"
 description = "Identity functions."
 authors = ["Andreas Stassivik <andreas@stassi.net>"]
 license = "MPL-2.0"
 readme = "README.md"
 
+# Supported Operating Systems: ["macOS Monterey 12", "Ubuntu 22.04", "Windows Server 2022"]
+
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.7 || ^3.8 || ^3.9 || ^3.10 || ^3.11"
 
 [tool.poetry.group.test.dependencies]
 behave = "^1.2.6"
