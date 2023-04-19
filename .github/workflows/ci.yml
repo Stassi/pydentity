@@ -20,11 +20,13 @@ jobs:
         with:
           python-version: 3.11
 
+      - name: Upgrade pip
+        run: |
+          python -m pip install -U pip==23.1
+
       - name: Install pipx
         run: |
-          python -m pip install --upgrade pip
-          pip install pipx
-          echo "$(pipx ensurepath)" >> $GITHUB_ENV
+          python -m pip install pipx==1.2.0
 
       - name: Install Poetry using pipx
         run: |
