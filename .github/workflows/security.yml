@@ -1,4 +1,4 @@
-name: CodeQL
+name: Security
 
 on:
   push:
@@ -13,8 +13,8 @@ env:
   LANGUAGE: python
 
 jobs:
-  analyze:
-    name: Analyze
+  codeql_analyze:
+    name: CodeQL analysis
     runs-on: ubuntu-latest
     permissions:
       actions: read
