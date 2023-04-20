@@ -1,0 +1,42 @@
+name: Security
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '36 14 * * 5'
+
+jobs:
+  codeql_analyze:
+    name: CodeQL analysis
+    runs-on: ubuntu-22.04
+
+    env:
+      LANGUAGE: python
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.5.2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2.2.12
+        with:
+          languages: ${{ env.LANGUAGE }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2.2.12
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2.2.12
+        with:
+          category: /language:${{ env.LANGUAGE }}
