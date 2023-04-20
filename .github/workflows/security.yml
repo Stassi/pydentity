@@ -30,7 +30,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2.2.12
         with:
-          languages: $LANGUAGE
+          languages: ${{ env.LANGUAGE }}
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v2.2.12
@@ -38,4 +38,4 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2.2.12
         with:
-          category: /language:$LANGUAGE
+          category: /language:${{ env.LANGUAGE }}
