@@ -1,7 +1,4 @@
-from typing import Union
-
-
-def parse_string(value: str) -> Union[bool, float, int, str, None]:
+def parse_string(value: str) -> bool | float | int | str | None:
     """
     Parse a string and return the appropriate type.
 
