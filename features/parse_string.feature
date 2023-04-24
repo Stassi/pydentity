@@ -7,14 +7,21 @@ Feature: Parse string
     Then the parsed input should be <input> of type <type>
 
     Examples:
-      | input   | type     |
-      | True    | bool     |
-      | False   | bool     |
-      | 42      | int      |
-      | -42     | int      |
-      | 1.23    | float    |
-      | -1.23   | float    |
-      | 1.2e-3  | float    |
-      | -1.2e3  | float    |
-      | "hello" | str      |
-      | None    | NoneType |
+      | input            | type     |
+      | False            | bool     |
+      | True             | bool     |
+      | b"hello"         | bytes    |
+      | {"a": 1, "b": 2} | dict     |
+      | ...              | ellipsis |
+      | -1.23            | float    |
+      | 1.23             | float    |
+      | -1.2e3           | float    |
+      | 1.2e-3           | float    |
+      | -42              | int      |
+      | 42               | int      |
+      | [1, 2, 3]        | list     |
+      | {1, 2, 3}        | set      |
+      | set()            | set      |
+      | "hello"          | str      |
+      | (1, 2, 3)        | tuple    |
+      | None             | NoneType |
