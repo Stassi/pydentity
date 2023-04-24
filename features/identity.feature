@@ -7,14 +7,21 @@ Feature: Identity function
     Then the result should be <input>
 
     Examples:
-      | input   |
-      | True    |
-      | False   |
-      | 42      |
-      | -42     |
-      | 1.23    |
-      | -1.23   |
-      | 1.2e-3  |
-      | -1.2e3  |
-      | "hello" |
-      | None    |
+      | input            |
+      | False            |
+      | True             |
+      | b"hello"         |
+      | {"a": 1, "b": 2} |
+      | ...              |
+      | -1.23            |
+      | 1.23             |
+      | -1.2e3           |
+      | 1.2e-3           |
+      | -42              |
+      | 42               |
+      | [1, 2, 3]        |
+      | {1, 2, 3}        |
+      | set()            |
+      | "hello"          |
+      | (1, 2, 3)        |
+      | None             |
