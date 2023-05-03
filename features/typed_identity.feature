@@ -10,6 +10,7 @@ Feature: Type-specific identity function
     Examples:
       | input            | type     |
       | False            | bool     |
+      | True             | bool     |
       | b"hello"         | bytes    |
       | {"a": 1, "b": 2} | dict     |
       | ...              | ellipsis |
