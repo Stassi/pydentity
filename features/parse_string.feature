@@ -2,9 +2,9 @@ Feature: Parse string
   The parse string function parses a string and returns the appropriate type.
 
   Scenario Outline: Parsing various inputs
-    Given the unparsed input <input>
-    When the input is parsed
-    Then the parsed input should be <input> of type <type>
+    Given the input <input>
+    Then the result should be <input>
+    And the result should be of type <type>
 
     Examples:
       | input            | type     |
