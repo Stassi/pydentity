@@ -20,7 +20,7 @@ type_mapping: dict[str, Type[T]] = {
 }
 
 
-@given("a type-specific identity function for type {type_str}")
+@given("the type-specific identity function for type {type_str}")
 def step_given_type_specific_identity_function(context: Context, type_str: str) -> None:
     """
     Create and store a type-specific identity function for the given type in the context.

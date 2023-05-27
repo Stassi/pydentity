@@ -3,7 +3,7 @@ Feature: Type-specific identity function
 
   Scenario Outline: Apply type-specific identity function to various types of input
     Given the input <input>
-    And a type-specific identity function for type <type>
+    And the type-specific identity function for type <type>
     When the type-specific identity function is applied
     Then the result should be <input>
 
