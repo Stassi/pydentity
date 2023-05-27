@@ -2,7 +2,7 @@ from behave import then
 from behave.runner import Context
 
 
-@then("the result should be of type {expected_type}")
+@then("the result type should be {expected_type}")
 def step_then_verify_result_type(context: Context, expected_type: str) -> None:
     """
     Verify the result is of the expected type.

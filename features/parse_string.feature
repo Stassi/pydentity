@@ -4,7 +4,7 @@ Feature: Parse string
   Scenario Outline: Parsing various inputs
     Given the input <input>
     Then the result should be <input>
-    And the result should be of type <type>
+    And the result type should be <type>
 
     Examples:
       | input            | type     |
