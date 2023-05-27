@@ -1,11 +1,11 @@
-Feature: Parse string
-  The parse string function parses a string and returns the appropriate type.
+Feature: Type-specific identity function
+  The type-specific identity function is created by the higher-order function create_identity, which returns a specialized identity function for the given type.
 
-  Scenario Outline: Parsing various inputs
+  Scenario Outline: Apply type-specific identity function to various types of input
     Given the input <input>
-    Then the parsed input is the result
-    And the result should be <input>
-    And the result type should be <type>
+    And the type-specific identity function for type <type>
+    When the type-specific identity function is applied
+    Then the result should be <input>
 
     Examples:
       | input            | type     |

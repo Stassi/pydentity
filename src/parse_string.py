@@ -1,8 +1,7 @@
 from ast import literal_eval
-from types import EllipsisType
 
 
-def parse_string(value: str) -> bool | bytes | dict | EllipsisType | float | int | list | set | str | tuple | None:
+def parse_string(value: str) -> bool | bytes | dict | type(Ellipsis) | float | int | list | set | str | tuple | None:
     """
     Parse a string and return the appropriate type.
 
