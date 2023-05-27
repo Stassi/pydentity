@@ -2,8 +2,8 @@ Feature: Type-specific identity function
   The type-specific identity function is created by the higher-order function create_identity, which returns a specialized identity function for the given type.
 
   Scenario Outline: Apply type-specific identity function to various types of input
-    Given a type-specific identity function for type <type>
-    And the input <input>
+    Given the input <input>
+    And a type-specific identity function for type <type>
     When the type-specific identity function is applied
     Then the result should be <input>
 
