@@ -3,7 +3,8 @@ Feature: Parse string
 
   Scenario Outline: Parsing various inputs
     Given the input <input>
-    Then the result should be <input>
+    Then the parsed input is the result
+    And the result should be <input>
     And the result type should be <type>
 
     Examples:
