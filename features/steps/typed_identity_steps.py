@@ -1,6 +1,6 @@
 from typing import Type
 
-from behave import given, when
+from behave import given, then, when
 from behave.runner import Context
 
 from src.identity import create_identity, T
@@ -38,4 +38,20 @@ def step_when_type_specific_identity_function_applied(context: Context) -> None:
 
     :param context: Behave's context object, which stores information and state for the duration of the test scenario.
     """
-    context.result = context.type_specific_identity_function(context.value)
+    try:
+        context.result = context.type_specific_identity_function(context.value)
+    except Exception as e:
+        context.exception = e
+
+
+@then('a TypeError should be raised with the message "{msg}"')
+def step_then_type_error(context: Context, msg: str) -> None:
+    """
+    Expect a TypeError exception.
+
+    :param context: Behave's context object, which stores information and state for the duration of the test scenario.
+    :param msg: The expected TypeError message.
+    """
+    assert 'exception' in context, "Expected an exception but none was raised"
+    assert isinstance(context.exception, TypeError), f'Expected TypeError, got "{type(context.exception).__name__}"'
+    assert str(context.exception) == msg, f'Expected error message "{msg}", got "{str(context.exception)}"'

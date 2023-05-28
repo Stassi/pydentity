@@ -26,3 +26,20 @@ Feature: Type-specific identity function
       | "hello"          | str      |
       | (1, 2, 3)        | tuple    |
       | None             | NoneType |
+
+  Scenario Outline: Apply type-specific identity function to incorrect types of input
+    Given the input <input>
+    And the type-specific identity function for type <type>
+    When the type-specific identity function is applied
+    Then a TypeError should be raised with the message "Expected value of type "<type>", got "<actual_type>""
+
+    Examples:
+      | input            | actual_type | type  |
+      | "hello"          | str         | int   |
+      | 42               | int         | str   |
+      | [1, 2, 3]        | list        | set   |
+      | {"a": 1, "b": 2} | dict        | list  |
+      | -1.23            | float       | int   |
+      | set()            | set         | list  |
+      | ...              | ellipsis    | float |
+      | None             | NoneType    | bool  |
