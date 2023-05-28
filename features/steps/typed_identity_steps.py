@@ -23,7 +23,7 @@ type_mapping: dict[str, Type[T]] = {
 @given("the type-specific identity function for type {type_str}")
 def step_given_type_specific_identity_function(context: Context, type_str: str) -> None:
     """
-    Create and store a type-specific identity function for the given type in the context.
+    Create and store a type-specific identity function of the given type in the context.
 
     :param context: Behave's context object, which stores information and state for the duration of the test scenario.
     :param type_str: The type for which the identity function should be created.

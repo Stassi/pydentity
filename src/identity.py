@@ -15,7 +15,7 @@ def identity(x: T) -> T:
 
 def create_identity(t: Type[T]) -> Callable[[T], T]:
     """
-    Creates and returns a type-specific identity function for the given type.
+    Creates and returns a type-specific identity function of the given type.
 
     :param t: The type for which the identity function should be created.
     :return: The type-specific identity function.
