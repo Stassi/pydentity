@@ -28,6 +28,8 @@ def create_identity(t: Type[T]) -> Callable[[T], T]:
         :param x: The input value of the specified type.
         :return: The input value unchanged.
         """
+        if not isinstance(x, t):
+            raise TypeError(f'Expected value of type "{t.__name__}", got "{type(x).__name__}"')
         return x
 
     return typed_identity
