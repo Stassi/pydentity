@@ -7,7 +7,7 @@
 
 `T` is a [generic type](https://docs.python.org/3/library/typing.html#typing.Generic).
 
-| Method            | Signature     | Description                                                  |
+| Function          | Signature     | Description                                                  |
 |-------------------|---------------|--------------------------------------------------------------|
 | `identity`        | `T → T`       | Returns its value unchanged.                                 |
 | `create_identity` | `T → (T → T)` | Returns a type-specific identity function of the given type. |
