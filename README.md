@@ -53,3 +53,31 @@ A wide range of **[built-in types](https://docs.python.org/3/library/stdtypes.ht
 * `str`
 * `tuple`
 * `NoneType`
+
+## Applications
+
+### Placeholder
+
+The `identity` function can be used as a **placeholder** during the development process, especially in the early stages
+when components are pending implementation.
+
+### Default function
+
+The `identity` function can be employed as a **default function**, a fallback option for when a function is not supplied
+during development.
+
+### Type safety
+
+The `create_identity` function ensures **[type safety](https://en.wikipedia.org/wiki/Type_safety)** by generating
+type-specific identity functions in scenarios where type consistency is required.
+
+### Higher-order functions
+
+Identity functions can be used as arguments for **[higher-order
+functions](https://en.wikipedia.org/wiki/Higher-order_function)** (**HOF**s), which accept other functions as
+parameters.
+
+### Functional pipelines
+
+Identity functions, which leave their input unaltered, can be utilized in **data transformation pipelines**, where a
+certain transformation might conditionally need to be skipped.
