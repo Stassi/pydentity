@@ -4,7 +4,7 @@
 [![Security](https://github.com/Stassi/pydentity/actions/workflows/security.yml/badge.svg)](https://github.com/Stassi/pydentity/actions/workflows/security.yml)
 
 **`pydentity`** is an implementation of [identity functions](https://en.wikipedia.org/wiki/Identity_function) designed
-for various practical applications in Python development
+for various practical applications in [Python development](https://en.wikipedia.org/wiki/Python_(programming_language))
 and [functional programming](https://en.wikipedia.org/wiki/Functional_programming).
 
 ## API
