@@ -58,8 +58,8 @@ A wide range of **[built-in types](https://docs.python.org/3/library/stdtypes.ht
 
 ### Placeholder
 
-The `identity` function can be used as a **placeholder** during the development process, especially in the early stages
-when components are pending implementation.
+The `identity` function can be used as a [no-operation](https://en.wikipedia.org/wiki/NOP_(code)) **placeholder** during
+the development process, especially in the early stages when components are pending implementation.
 
 ### Default function
 
@@ -79,5 +79,6 @@ parameters.
 
 ### Functional pipelines
 
-Identity functions, which leave their input unaltered, can be utilized in **data transformation pipelines**, where a
-certain transformation might conditionally need to be skipped.
+Identity functions, which leave their input unaltered, can be utilized in **[functional
+composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science))** (data transformation
+pipelines), where a certain transformation might conditionally need to be skipped.
