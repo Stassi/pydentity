@@ -3,57 +3,44 @@
 [![Continuous Integration](https://github.com/Stassi/pydentity/actions/workflows/ci.yml/badge.svg)](https://github.com/Stassi/pydentity/actions/workflows/ci.yml)
 [![Security](https://github.com/Stassi/pydentity/actions/workflows/security.yml/badge.svg)](https://github.com/Stassi/pydentity/actions/workflows/security.yml)
 
+**`pydentity`** is an implementation of [identity functions](https://en.wikipedia.org/wiki/Identity_function) designed
+for various practical applications in Python development
+and [functional programming](https://en.wikipedia.org/wiki/Functional_programming).
+
 ## API
 
-`T` is a [generic type](https://docs.python.org/3/library/typing.html#typing.Generic).
+### `identity` (`T → T`)
 
-| Function          | Signature     | Description                                                  |
-|-------------------|---------------|--------------------------------------------------------------|
-| `identity`        | `T → T`       | Returns its value unchanged.                                 |
-| `create_identity` | `T → (T → T)` | Returns a type-specific identity function of the given type. |
+The **identity function** is a generic function that takes a value of any type and returns it unchanged.
 
-## Usage
-
-### Identity function
-
-The **identity function** (`T → T`) is a foundational type-versatile utility function capable of returning its input
-value unchanged.
+#### Example usage
 
 ```python
 from src.identity import identity
 
-identity('hello')
-# returns "hello"
-
-identity(1)
-# returns 1
-
+identity('hello')  # returns "hello"
+identity(1)  # returns 1
 ```
 
-### Type-specific identity function
+### `create_identity` (`T → (T → T)`)
 
-Use `create_identity` to **create a type-specific identity function** (`T → (T → T)`) by calling `create_identity(type)`
-where a [type](https://docs.python.org/3.11/library/stdtypes.html) is its only argument.
+This function takes a type as an argument and returns a **type-specific identity function**. If the type-specific
+function is called with a value that doesn't match the specified type, it will raise a `TypeError`.
 
-#### Example
-
-To **create an example identity function** that only returns `str`s (strings):
+#### Example usage
 
 ```python
 from src.identity import create_identity
 
 string_identity = create_identity(str)
 
-string_identity('hello')
-# returns "hello"
-
-string_identity(1)
-# raises TypeError: Expected value of type "str", got "int"
+string_identity('hello')  # returns "hello"
+string_identity(1)  # raises TypeError: Expected value of type "str", got "int"
 ```
 
-#### Supported argument types
+#### Types supported
 
-**Supported argument types** include and are not limited to:
+A wide range of **[built-in types](https://docs.python.org/3/library/stdtypes.html) are supported**:
 
 * `bool`
 * `bytes`
